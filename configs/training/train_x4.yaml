@@ -1,0 +1,30 @@
+
+patch_size: 64                    
+batch_size: 1                     
+accumulate_steps: 4               
+workers: 2                        
+prefetch_factor: 2
+persistent_workers: false
+pin_memory: true                  
+
+lr_initial: 0.0002
+warmup_steps: 500
+
+epochs: 150                       
+steps_per_epoch: 100              
+
+ema_decay: 0.9995                 
+degrade_mix: true                 
+loss:
+  l1: 1.0
+  ssim: 0.2
+  edge: 0.1                       
+pyramid_supervision:
+  use: true
+  w_x2_start: 0.7                 
+  w_x2_end: 0.2                   
+use_lmdb: true
+train_lmdb_HR: datasets/train_HR.lmdb
+train_lmdb_LR: datasets/train_LR.lmdb
+
+save_dir: experiments/esrt_fast_best/checkpoints

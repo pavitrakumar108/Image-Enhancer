@@ -1,0 +1,6 @@
+channels: 64
+num_hpb: 5
+transformer_blocks: 2
+heads: 12
+split: 2
+scale: 4
